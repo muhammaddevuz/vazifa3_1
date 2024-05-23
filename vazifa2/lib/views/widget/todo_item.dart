@@ -33,18 +33,18 @@ class _ToDoItemState extends State<ToDoItem> {
               borderRadius: BorderRadius.circular(25), color: Colors.yellow),
           child: ListTile(
             leading: widget.todo.check
-                ? Icon(
+                ? const Icon(
                     Icons.circle_outlined,
                     color: Colors.blue,
                   )
-                : Icon(
+                : const Icon(
                     Icons.check_circle,
                     color: Colors.green,
                   ),
             title: Text(widget.todo.title,
                 style: widget.todo.check
-                    ? TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
-                    : TextStyle(
+                    ? const TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
+                    : const TextStyle(
                         decoration: TextDecoration.lineThrough,
                         fontSize: 20,
                         fontWeight: FontWeight.w500)),
