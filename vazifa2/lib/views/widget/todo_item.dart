@@ -26,39 +26,46 @@ class _ToDoItemState extends State<ToDoItem> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: widget.changeposition,
-      child: ListTile(
-        leading: widget.todo.check
-            ? Icon(
-                Icons.circle_outlined,
-                color: Colors.blue,
-              )
-            : Icon(
-                Icons.check_circle,
-                color: Colors.green,
-              ),
-        title: Text(widget.todo.title,
-            style: widget.todo.check
-                ? TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
-                : TextStyle(
-                    decoration: TextDecoration.lineThrough,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500)),
-        trailing: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            IconButton(
-                onPressed: widget.todo.check ? widget.edit : () {},
-                icon: const Icon(
-                  Icons.edit,
-                  color: Colors.blue,
-                )),
-            IconButton(
-                onPressed: widget.onDelete,
-                icon: const Icon(
-                  Icons.delete,
-                  color: Colors.red,
-                ))
-          ],
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25), color: Colors.yellow),
+          child: ListTile(
+            leading: widget.todo.check
+                ? Icon(
+                    Icons.circle_outlined,
+                    color: Colors.blue,
+                  )
+                : Icon(
+                    Icons.check_circle,
+                    color: Colors.green,
+                  ),
+            title: Text(widget.todo.title,
+                style: widget.todo.check
+                    ? TextStyle(fontSize: 20, fontWeight: FontWeight.w500)
+                    : TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500)),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                    onPressed: widget.todo.check ? widget.edit : () {},
+                    icon: const Icon(
+                      Icons.edit,
+                      color: Colors.blue,
+                    )),
+                IconButton(
+                    onPressed: widget.onDelete,
+                    icon: const Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    ))
+              ],
+            ),
+          ),
         ),
       ),
     );
